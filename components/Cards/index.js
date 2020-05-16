@@ -24,23 +24,23 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
         console.log(axiosData)
         let cardContainer = document.querySelector(".cards-container")
         axiosData.data.articles.bootstrap.forEach(element => {
-            cardContainer.append(cardCreator(element))
+            cardContainer.append(cardCreator(element, "bootstrap"))
         });
         axiosData.data.articles.javascript.forEach(element => {
-            cardContainer.append(cardCreator(element))
+            cardContainer.append(cardCreator(element, "javascript"))
         });
         axiosData.data.articles.jquery.forEach(element => {
-            cardContainer.append(cardCreator(element))
+            cardContainer.append(cardCreator(element, "jquery"))
         });
         axiosData.data.articles.node.forEach(element => {
-            cardContainer.append(cardCreator(element))
+            cardContainer.append(cardCreator(element, "node.js"))
         });
         axiosData.data.articles.technology.forEach(element => {
-            cardContainer.append(cardCreator(element))
+            cardContainer.append(cardCreator(element, "technology"))
         });
     })
 
-let cardCreator = function(cardData){
+let cardCreator = function(cardData, tab){
     let card = document.createElement("div") 
     card.classList.add("card")
     let cardHeadline = document.createElement("div") 
@@ -59,6 +59,7 @@ let cardCreator = function(cardData){
     card.append(cardHeadline, cardAuthor)
     cardAuthor.append(cardImgContainer, cardByline)
     cardImgContainer.append(cardImg)
+    card.setAttribute("data-tab", tab)
 
     return card;
 
