@@ -293,11 +293,13 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 3;
 }
 .carousel .right-button {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
+  z-index: 3;
 }
 .carousel img {
   width: 100%;
@@ -305,4 +307,17 @@ body {
 }
 .carousel .imgShow {
   display: block;
+  transition: transform 1s;
+}
+.carousel .slideLeftBegin {
+  transform: translate(500vw, 0);
+}
+.carousel .imgRight {
+  transform: translate(-500vw, 0);
+}
+.carousel .imgSlideLeft {
+  transform: translate(-500vw, 0);
+}
+.carousel .imgSlideRight {
+  transform: translate(500vw, 0);
 }

@@ -41,13 +41,30 @@ let carouselCreator = function(){
   carouselLBtn.addEventListener("click", (event)=>{
     let oldIndex = index
     index = index == 0 ? carouselImgs.length-1 : --index;
-    carouselImgs[oldIndex].classList.remove("imgShow")
+    
+    carouselImgs[oldIndex].classList.add("imgSlideLeft")
+    setTimeout(function(){
+      carouselImgs[oldIndex].classList.remove("imgShow")
+      carouselImgs[oldIndex].classList.remove("imgSlideLeft")
+      carouselImgs[index].classList.remove("slideLeftBegin")
+    }, 1000)
+    
+    carouselImgs[index].classList.add("slideLeftBegin")
     carouselImgs[index].classList.add("imgShow")
+    
   })
   carouselRBtn.addEventListener("click", (event) =>{
     let oldIndex = index
     index = index == carouselImgs.length-1 ? 0 : ++index;
-    carouselImgs[oldIndex].classList.remove("imgShow")
+    
+    carouselImgs[oldIndex].classList.add("imgSlideRight")
+    setTimeout(function(){
+      carouselImgs[oldIndex].classList.remove("imgShow")
+      carouselImgs[oldIndex].classList.remove("imgSlideRight")
+      carouselImgs[index].classList.remove("slideRightBegin")
+    }, 1000)
+    
+    carouselImgs[index].classList.add("slideRightBegin")
     carouselImgs[index].classList.add("imgShow")
   })
 
