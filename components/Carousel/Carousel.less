@@ -28,14 +28,33 @@
     top: 50%; 
     left: 25px;
     transform: translate(0, -50%);
+    z-index: 3;
   }
   .right-button {
     top: 50%; 
     right: 25px;
     transform: translate(0, -50%);
+    z-index: 3;
   }
   img {
     .width-100();
     display: none;
+    
+  }
+  .imgShow {
+    display: block;
+    transition: transform 1s;
+  }
+  .slideLeftBegin{
+    transform: translate(500vw, 0);
+  }
+  .imgRight{
+    transform: translate(-500vw, 0);
+  }
+  .imgSlideLeft {
+    transform: translate(-500vw, 0);
+  }
+  .imgSlideRight {
+    transform: translate(500vw, 0);
   }
 }

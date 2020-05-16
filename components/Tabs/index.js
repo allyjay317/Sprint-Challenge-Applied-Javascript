@@ -7,3 +7,36 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
+
+let topics = document.querySelector(".topics")
+axios.get("https://lambda-times-backend.herokuapp.com/topics")
+    .then((data) =>{
+        console.log(data);
+        data.data.topics.forEach(topic => {
+            let tab = document.createElement("div")
+            tab.classList.add("tab")
+            tab.textContent = topic
+            topics.append(tab);
+            tab.addEventListener("click", (event) =>{
+                let cards = document.querySelectorAll(".card")
+                cards.forEach(element =>{
+                    element.style.display = "flex"
+                })
+                if(tab.classList.contains("active-tab")){
+                    tab.classList.remove("active-tab")
+                } else {
+                    let tabs = document.querySelectorAll(".tab")
+                    tabs.forEach(loopTab => {
+                        loopTab.classList.remove("active-tab")
+                    })
+
+                    tab.classList.add("active-tab")
+                    cards.forEach(element =>{
+                        if(element.getAttribute("data-tab") != tab.textContent){
+                            element.style.display = "none"
+                        }
+                    })
+                }
+            })
+        });
+    })
