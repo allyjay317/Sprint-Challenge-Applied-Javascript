@@ -29,14 +29,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead.
 
 1. What is the DOM?
+    The Document Object Model, a programatic representation of an html file in object form that can be manipulated by outside sources
 
 2. What is an event?
+    a user or browser interaction with a website
 
 3. What is an event listener?
+    a pointer to a callback to be fired when the browser detects that an event has occured
 
 4. Why would we convert a NodeList into an Array?
+    Array.from(`dom object`)
 
 5. What is a component?
+    A reusable DOM object that can be dynamically created in code to enforce look and feel across elements on a page
 
 ### Git Set up
 
